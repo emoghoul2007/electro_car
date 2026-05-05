@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дякуємо за замовлення - Kitchen Cleaner</title>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --accent: #8b0000;
+            --accent-hover: #a50000;
+            --text-main: #f0f0f0;
+            --text-muted: #999;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 15px;
+            background: linear-gradient(180deg, rgba(139,0,0,0.2) 0%, rgba(13,13,13,1) 100%);
+            border-bottom: 1px solid var(--accent);
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .header h1 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .header p.wait {
+            color: #ffcccc;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .header p.promo {
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: border-color 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #2a2a2a; /* заглушка если нет картинки */
+            display: block;
+        }
+
+        .product-title {
+            font-size: 22px;
+            margin: 0 0 10px 0;
+        }
+
+        .price-block {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        .new-price {
+            color: #ff3333;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .btn-add {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.1s;
+            margin-bottom: 15px;
+        }
+
+        .btn-add:hover { background: var(--accent-hover); }
+        .btn-add:active { transform: scale(0.98); }
+        .btn-add:disabled { background: #333; color: #777; cursor: not-allowed; }
+
+        details {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        summary {
+            color: #ff6666;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            outline: none;
+            padding: 5px;
+        }
+
+        .details-content {
+            padding-top: 15px;
+            font-size: 15px;
+        }
+
+        .marketing-text {
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        .gif-placeholder {
+            width: 100%;
+            padding: 40px 0;
+            background: #222;
+            color: #555;
+            text-align: center;
+            border: 1px dashed #444;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        table td {
+            padding: 8px;
+            border-bottom: 1px solid #333;
+        }
+
+        table td:first-child {
+            color: var(--text-muted);
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Дякуємо за замовлення! 🎉</h1>
+    <p class="wait">Очікуйте дзвінок менеджера протягом 10-15 хв.</p>
+    <p class="promo">👇 Тільки для вас: перегляньте ці товари за зниженою акційною ціною, щоб додати їх до вашої посилки без переплат за доставку!</p>
+</div>
+
+<div class="container">
+    
+    <div class="product-card">
+        <img src="main-product12.jpg" alt="Лікувальні пластирі для ніг" class="product-image">
+        <h2 class="product-title">Лікувальні пластирі для ніг Kinoki</h2>
+        <div class="price-block">
+            <span class="old-price">499 грн</span>
+            <span class="new-price">249 грн</span>
+        </div>
+        <button class="btn-add" data-name="Лікувальні пластирі Kinoki" data-price="249">Додати до замовлення</button>
+        
+        <details>
+            <summary>Дізнатися детальніше ▼</summary>
+            <div class="details-content">
+                <p class="marketing-text">Позбавтеся втоми та токсинів під час сну! Пластирі Kinoki працюють на основі давньої східної медицини, витягуючи шлаки через стопи.</p>
+                <img src="gifdiesasib1212.gif" alt="Демонстрація пластирів 1" class="product-image">
+                <p class="marketing-text">Відчуйте легкість у ногах вже після першого застосування. Знімають набряки та покращують кровообіг.</p>
+                <img src="gifdiesasib11.gif" alt="Демонстрація пластирів 1" class="product-image">
+                <p class="marketing-text">На 100% натуральний склад. Просто наклейте на ніч і зніміть вранці.</p>
+                <img src="gifdiesasib2321.gif" alt="Демонстрація пластирів 1" class="product-image">
+                
+                
+                <table>
+                    <tr><td>Призначення</td><td>Глибоке очищення від токсинів та шлаків</td></tr>
+                    <tr><td>Зона застосування</td><td>Стопи (акупунктурні точки)</td></tr>
+                    <tr><td>Склад</td><td>Бамбуковий оцет, турмалін, хітозан, перила</td></tr>
+                    <tr><td>Час дії</td><td>6–8 годин (під час сну)</td></tr>
+                    <tr><td>Ефект</td><td>Зняття набряків, покращення сну та імунітету</td></tr>
+                    <tr><td>Комплектація</td><td>10 пластирів + 10 клейких основ</td></tr>
+                    <tr><td>Виробник</td><td>Південна Корея (за ліцензією Японії)</td></tr>
+                </table>
+            </div>
+        </details>
+    </div>
+
+    <div class="product-card">
+        <img src="main-product166.jpg" alt="Подрібнювач бездротовий" class="product-image">
+        <h2 class="product-title">Бездротовий міні-подрібнювач (JUCIER AND460)</h2>
+        <div class="price-block">
+            <span class="old-price">799 грн</span>
+            <span class="new-price">399 грн</span>
+        </div>
+        <button class="btn-add" data-name="Подрібнювач бездротовий" data-price="399">Додати до замовлення</button>
+        
+        <details>
+            <summary>Дізнатися детальніше ▼</summary>
+            <div class="details-content">
+                <p class="marketing-text">Забудьте про сльози від цибулі та брудні дошки! Цей компактний помічник подрібнить часник, горіхи чи м'ясо за лічені секунди.</p>
+                <img src="gifdiesasib34243.gif" alt="Демонстрація пластирів 1" class="product-image">
+                <p class="marketing-text">Жодних дротів. Працює від вбудованого акумулятора. Зарядили по USB — і користуйтеся будь-де.</p>
+                <img src="gifdiesasib1856.gif" alt="Демонстрація пластирів 1" class="product-image">
+                <p class="marketing-text">Легко миється і не займає місця на кухні. Ідеально для приготування соусів та дитячого харчування.</p>
+                <img src="gifdiesasib2767.gif" alt="Демонстрація пластирів 1" class="product-image">
+                
+                
+                <table>
+                    <tr><td>Модель</td><td>JUCIER AND460</td></tr>
+                    <tr><td>Потужність</td><td>45 Вт (Ном. напруга 3.7 В)</td></tr>
+                    <tr><td>Ємність чаші</td><td>350 мл</td></tr>
+                    <tr><td>Матеріал леза</td><td>Нержавіюча сталь 304 (3 рівні)</td></tr>
+                    <tr><td>Матеріал корпусу</td><td>Харчовий пластик (BPA-free)</td></tr>
+                    <tr><td>Тип живлення</td><td>Акумулятор (USB-зарядка)</td></tr>
+                    <tr><td>Комплектація</td><td>Блок, чаша, леза, вінчик, щіточка, USB</td></tr>
+                </table>
+                <img src="gifdiesasib376.gif" alt="Демонстрація пластирів 1" class="product-image">
+            </div>
+        </details>
+    </div>
+
+    <div class="product-card">
+        <img src="main-product333.jpg" alt="Фонтан на сонячних батареях" class="product-image">
+        <h2 class="product-title">Фонтан для саду на сонячних батареях</h2>
+        <div class="price-block">
+            <span class="old-price">980 грн</span>
+            <span class="new-price">680 грн</span>
+        </div>
+        <button class="btn-add" data-name="Фонтан на сонячних батареях" data-price="680">Додати до замовлення</button>
+        
+        <details>
+            <summary>Дізнатися детальніше ▼</summary>
+            <div class="details-content">
+                <p class="marketing-text">Перетворіть ваш двір на райський куточок. Автономний фонтан, який працює виключно від енергії сонця!</p>
+                <img src="gifdiesasib26.gif" alt="Демонстрація пластирів 1" class="product-image">
+                <p class="marketing-text">Не потребує розеток чи монтажу. Просто покладіть його на воду, і він почне працювати.</p>
+                <img src="gifdiesasib260.gif" alt="Демонстрація пластирів 1" class="product-image">
+                <p class="marketing-text">Вбудована підсвітка автоматично вмикається ввечері, створюючи неймовірну атмосферу.</p>
+                <img src="gifdiesasib2608.gif" alt="Демонстрація пластирів 1" class="product-image">
+                
+                <table>
+                    <tr><td>Джерело живлення</td><td>Сонячна панель + Нано-АКБ</td></tr>
+                    <tr><td>Час автономної роботи</td><td>До 48 годин на одному заряді</td></tr>
+                    <tr><td>Висота струменя</td><td>Від 30 см до 1.5 метра</td></tr>
+                    <tr><td>Підсвітка</td><td>Інтелектуальна (вмикається вночі)</td></tr>
+                    <tr><td>Форсунки</td><td>4 змінні насадки</td></tr>
+                    <tr><td>Матеріал</td><td>Ударостійкий еко-АБС пластик</td></tr>
+                    <tr><td>Призначення</td><td>Басейни, ставки, сад</td></tr>
+                </table>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<script>
+    // ВСТАВ СЮДИ СВОЄ ПОСИЛАННЯ НА GOOGLE SCRIPT
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxFdvMBUE-zwCXaZ38CrQAc4DlxPBs000_ZixvDfLNvSlLm-zGWuZZ-GQDBJn2YSutJuQ/exec';
+
+    document.querySelectorAll('.btn-add').forEach(button => {
+        button.addEventListener('click', function() {
+            // Отримуємо номер телефону клієнта, збережений на попередній сторінці
+            const userPhone = localStorage.getItem('userPhone');
+            
+            if (!userPhone) {
+                alert('Помилка: не знайдено номер телефону клієнта. Замовлення не може бути оброблено.');
+                return;
+            }
+
+            const productName = this.getAttribute('data-name');
+            const productPrice = this.getAttribute('data-price');
+
+            // Змінюємо вигляд кнопки
+            this.innerText = 'Додається...';
+            this.disabled = true;
+
+            // Відправляємо дані в таблицю
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify({
+                    action: 'upsell',
+                    phone: userPhone,
+                    product: productName,
+                    price: productPrice
+                })
+            })
+            .then(response => response.text())
+            .then(data => {
+                this.innerText = '✅ Додано до замовлення';
+                this.style.background = '#006400'; // Зелений колір при успіху
+            })
+            .catch(error => {
+                this.innerText = 'Помилка. Спробуйте ще';
+                this.disabled = false;
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
